@@ -131,6 +131,11 @@ class Router {
                 }
 
                 node.innerHTML = html;
+                
+                //remove all child brfore appendChild new node by leslieliu 
+                while (this._$container.firstChild) {
+                    this._$container.removeChild(this._$container.firstChild);
+                }
                 this._$container.appendChild(node);
                 // add class
                 if (!isBack && this._options.enter && hasChildren) {
